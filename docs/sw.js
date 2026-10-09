@@ -1,5 +1,5 @@
 // Kakitori offline cache. Network first, so updates show up; cache when offline.
-const CACHE = 'renshu-1.7.0';
+const CACHE = 'renshu-1.8.0';
 const FILES = ['./', './index.html', './manifest.webmanifest', './apple-touch-icon.png', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));

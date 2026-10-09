@@ -57,7 +57,7 @@ button{cursor:pointer;touch-action:manipulation;-webkit-user-select:none;user-se
 [lang="ja"]{font-family:var(--kana)}
 :focus-visible{outline:2px solid var(--ai);outline-offset:2px}
 .app{max-width:560px;margin:0 auto;padding:0 16px calc(88px + env(safe-area-inset-bottom,0px))}
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:10px 0 8px}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:10px 16px 8px;margin:0 -16px}
 .brand{display:flex;align-items:baseline;gap:8px}
 .brand-jp{font-size:22px;font-weight:600}
 .brand-en{font-size:14px;color:var(--ink-2)}
@@ -636,6 +636,7 @@ function dayStr(d){ return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
 function today(){ return dayStr(new Date()); }
 
 /* ================= State & sync ================= */
+const PRIVACY_URL = 'https://doomfrawen.github.io/Kakitori/privacy.html';
 const PLATFORM = window.RENSHU_PLATFORM || (/RenshuApp/.test(navigator.userAgent) ? 'android' : '');
 const IS_APP = PLATFORM!=='';
 const NATIVE = window.KakitoriNative || null;
@@ -1598,7 +1599,7 @@ function renderSettings(v){
   }
   const curLang=S.set.lang||'auto';
   const langOpts=[['auto', t('set.lang.auto',{name:langName(detectLang())})]].concat(LANGS);
-  const ver='1.7';
+  const ver='1.8';
   const about = PLATFORM==='android' ? t('about.android',{v:ver}) : PLATFORM==='ios' ? t('about.ios',{v:ver}) : t('about.version',{v:ver});
   v.innerHTML = `
     <section class="set-sec" style="margin-top:8px"><h2>${esc(t('set.display'))}</h2>
@@ -1626,7 +1627,8 @@ function renderSettings(v){
     <section class="set-sec"><h2>${esc(t('about.title'))}</h2>
       <p class="credit">${esc(about)}</p>
       <p class="credit">${esc(t('about.credit'))}</p>
-      ${LANG!=='en'?`<p class="credit">${esc(t('about.translations'))}</p>`:''}</section>`;
+      ${LANG!=='en'?`<p class="credit">${esc(t('about.translations'))}</p>`:''}
+      <p class="credit">${link(PRIVACY_URL, t('about.privacy'))}</p></section>`;
 }
 
 /* ================= Kana detail sheet ================= */

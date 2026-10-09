@@ -1,4 +1,4 @@
-package app.renshu;
+package app.kakitori;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

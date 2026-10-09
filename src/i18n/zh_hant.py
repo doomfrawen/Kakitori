@@ -345,6 +345,7 @@ UI = {
  'about.ios': 'Kakitori {v}（iPhone 版）。',
  'about.credit': '筆順資料：KanjiVG，作者 Ulrich Apel，CC BY-SA 3.0。',
  'about.translations': '此翻譯及其記憶提示由 AI 協助撰寫，可能存在錯誤。',
+ 'about.privacy': '隱私權政策',
 }
 
 HINTS = {

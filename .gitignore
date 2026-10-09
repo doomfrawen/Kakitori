@@ -7,3 +7,5 @@ android/build/
 keystore-password.txt
 .DS_Store
 __pycache__/
+*.aab
+*.idsig

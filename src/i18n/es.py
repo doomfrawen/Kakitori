@@ -215,6 +215,7 @@ UI = {
  'about.title': 'Acerca de', 'about.version': 'Kakitori {v}.', 'about.android': 'Kakitori {v} para Android.', 'about.ios': 'Kakitori {v} para iPhone.',
  'about.credit': 'Datos de orden de trazos: KanjiVG, de Ulrich Apel, CC BY-SA 3.0.',
  'about.translations': 'Esta traducción y sus pistas se escribieron con ayuda de IA y pueden contener errores.',
+ 'about.privacy': 'Política de privacidad',
 }
 
 HINTS = {

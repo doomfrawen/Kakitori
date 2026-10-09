@@ -11,9 +11,9 @@ Kakitori (書き取り) means writing from memory: the classic drill where you h
 
 ## Use it
 
-**iPhone:** open `https://doomfrawen.github.io/kakitori/` in Safari, tap Share, then Add to Home Screen. It opens full screen and works offline.
+**iPhone:** open `https://doomfrawen.github.io/Kakitori/` in Safari, tap Share, then Add to Home Screen. It opens full screen and works offline.
 
-**Android:** install `Kakitori.apk`.
+**Android:** coming to Google Play. Until then, install `Kakitori.apk`.
 
 ## Sync between phones
 
@@ -31,6 +31,8 @@ Google sync (through a small Apps Script) and backup codes are also available in
 | `src/i18n/` | One catalog per language: interface text, kana memory hints and verb meanings |
 | `src/build_app.py` | Checks every catalog and merges them into `src/app.html` |
 | `android/` | The Android wrapper: a WebView that loads the app offline |
+| `docs/privacy.html` | The privacy policy |
+| `store/` | The Google Play listing in every language, screenshots, and a publishing checklist |
 | `sync/KakitoriSync.gs` | The optional Google Apps Script for Google sync |
 | `tools/make_offline.py` | Builds `docs/` and the Android page from `src/app.html`, embedding the font |
 
@@ -51,11 +53,14 @@ The non-English translations and hints were written with AI help. Corrections fr
 Needs Python 3 with `fonttools`, `brotli` and `Pillow`, plus the Klee One `.ttf` files.
 
 ```sh
+python3 src/build_app.py
 python3 tools/make_offline.py <font-dir> src/app.html iphone docs
 python3 tools/make_offline.py <font-dir> src/app.html android android/assets/index.html
 ```
 
-`android/build.sh` builds and signs the APK. It takes a tools folder (aapt2, android.jar, dex2jar, uber-apk-signer), a keystore and its password. The signing key is not in this repository.
+The iPhone build doesn't include the privacy policy, so keep `docs/privacy.html` when you rebuild `docs/`.
+
+`android/build.sh` builds the Android app without Gradle: a signed app bundle (`Kakitori.aab`) for Google Play and a signed `Kakitori.apk` for testing. It needs the official Android build-tools 36.1, the Android 16 (API 36) platform and bundletool; the comment at the top of the script lists them. The signing key is not in this repository.
 
 ## Credits
 

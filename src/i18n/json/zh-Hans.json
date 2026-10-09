@@ -344,7 +344,8 @@
   "about.android": "Kakitori {v}（Android 版）。",
   "about.ios": "Kakitori {v}（iPhone 版）。",
   "about.credit": "笔顺数据：KanjiVG，作者 Ulrich Apel，CC BY-SA 3.0。",
-  "about.translations": "此翻译及其记忆提示由 AI 协助撰写，可能存在错误。"
+  "about.translations": "此翻译及其记忆提示由 AI 协助撰写，可能存在错误。",
+  "about.privacy": "隐私政策"
  },
  "hints": {
   "あ": "来自「安」的草书：宀 化成上面的横和竖，女 绕成下面的大圈。读 a，就是「安」ān 的开头。",

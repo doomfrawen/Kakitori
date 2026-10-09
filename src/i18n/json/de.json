@@ -359,7 +359,8 @@
   "about.android": "Kakitori {v} für Android.",
   "about.ios": "Kakitori {v} für iPhone.",
   "about.credit": "Strichfolge-Daten: KanjiVG von Ulrich Apel, CC BY-SA 3.0.",
-  "about.translations": "Diese Übersetzung und ihre Merkhilfen wurden mit KI-Hilfe geschrieben und können Fehler enthalten."
+  "about.translations": "Diese Übersetzung und ihre Merkhilfen wurden mit KI-Hilfe geschrieben und können Fehler enthalten.",
+  "about.privacy": "Datenschutzerklärung"
  },
  "hints": {
   "あ": "Ein Kreuz mit einer großen Schlaufe darunter: ein Anker, der sich im Seil verheddert hat. A wie Anker.",

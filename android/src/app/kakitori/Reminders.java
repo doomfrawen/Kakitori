@@ -1,4 +1,4 @@
-package app.renshu;
+package app.kakitori;
 
 import android.app.AlarmManager;
 import android.app.Notification;
@@ -15,7 +15,7 @@ import java.util.Calendar;
 
 /** The daily practice reminder: scheduling, and the notification itself. */
 final class Reminders {
-    static final String ACTION_REMIND = "app.renshu.action.REMIND";
+    static final String ACTION_REMIND = "app.kakitori.action.REMIND";
     static final String POST = "android.permission.POST_NOTIFICATIONS";
     private static final String CHANNEL = "practice";
 

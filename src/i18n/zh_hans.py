@@ -211,6 +211,7 @@ UI = {
  'about.title': '关于', 'about.version': 'Kakitori {v}。', 'about.android': 'Kakitori {v}（Android 版）。', 'about.ios': 'Kakitori {v}（iPhone 版）。',
  'about.credit': '笔顺数据：KanjiVG，作者 Ulrich Apel，CC BY-SA 3.0。',
  'about.translations': '此翻译及其记忆提示由 AI 协助撰写，可能存在错误。',
+ 'about.privacy': '隐私政策',
 }
 
 HINTS = {

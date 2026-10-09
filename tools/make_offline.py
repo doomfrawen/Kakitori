@@ -48,7 +48,7 @@ if TARGET == 'android':
 
 # ---------- iPhone home-screen web app ----------
 os.makedirs(OUT, exist_ok=True)
-VERSION = '1.7.0'
+VERSION = '1.8.0'
 head = '''<link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">

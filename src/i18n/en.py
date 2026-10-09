@@ -225,4 +225,5 @@ UI = {
  'about.title': 'About', 'about.version': 'Kakitori {v}.', 'about.android': 'Kakitori {v} for Android.', 'about.ios': 'Kakitori {v} for iPhone.',
  'about.credit': 'Stroke order data: KanjiVG by Ulrich Apel, CC BY-SA 3.0.',
  'about.translations': 'This translation and its memory hints were written with AI help and may contain mistakes.',
+ 'about.privacy': 'Privacy policy',
 }

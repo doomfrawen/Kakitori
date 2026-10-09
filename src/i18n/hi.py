@@ -215,6 +215,7 @@ UI = {
  'about.title': 'जानकारी', 'about.version': 'Kakitori {v}।', 'about.android': 'Android के लिए Kakitori {v}।', 'about.ios': 'iPhone के लिए Kakitori {v}।',
  'about.credit': 'स्ट्रोक क्रम डेटा: KanjiVG, Ulrich Apel द्वारा, CC BY-SA 3.0।',
  'about.translations': 'यह अनुवाद और इसके याद रखने वाले संकेत AI की मदद से लिखे गए हैं और इनमें गलतियाँ हो सकती हैं।',
+ 'about.privacy': 'गोपनीयता नीति',
 }
 
 HINTS = {

@@ -1,0 +1,31 @@
+Kakitori (書き取り) heißt „aus dem Gedächtnis schreiben“: die klassische Methode, mit der japanische Schulkinder lesen und schreiben lernen. Kakitori macht daraus ein paar Minuten Übung am Tag auf deinem Handy.
+
+SCHREIB JEDES KANA VON HAND
+• Du siehst einen Laut, zeichnest das passende Hiragana oder Katakana mit dem Finger und bekommst sofort Feedback zur Strichfolge.
+• Rote Zahlen zeigen die richtige Reihenfolge und Richtung. Neue Kana spielen zuerst ihre Striche ab, und Nachfahren blendet jederzeit eine Vorlage ein.
+• Zu jedem Kana gibt es eine Merkhilfe mit Bild und deutschem Wort.
+
+LESEN MIT KARTEN UND QUIZ
+• Karten und Quiz trainieren das Lesen in beide Richtungen: vom Kana zum Laut und vom Laut zum Kana.
+• Bewerte dich nach jeder Karte. Was du nicht wusstest, kommt nach Minuten wieder, was du sicher kannst, erst nach Tagen.
+• Wähle genau die Reihen, die du üben willst, auch die Laute mit ゛ und ゜.
+
+VERBEN, FÜNF AUF EINMAL
+• 85 Alltagsverben, von 食べる (essen) bis 結婚する (heiraten).
+• Übe eine Form nach der anderen: höflich und einfach, Gegenwart und Vergangenheit, Verneinung, Te-Form, „lass uns“ und „wollen“.
+• Die nächste Form wird frei, wenn 10 deiner letzten 12 Antworten stimmen, und zu jeder Antwort gibt es eine kurze Regel, die sie erklärt.
+• Schlag jedes Verb nach und sieh alle Formen nebeneinander.
+
+BEHALTE DEINEN FORTSCHRITT IM BLICK
+• Jedes Kana wird danach eingefärbt, wie gut du es kannst, getrennt für Lesen und Schreiben.
+• Tippe auf ein Kana, um seine Strichfolge abzuspielen und deine Statistik zu sehen.
+
+EINFACH UND PRIVAT
+• Keine Werbung, kein Konto, kein Tracking.
+• Funktioniert offline.
+• Eine tägliche Erinnerung, die an Tagen, an denen du schon geübt hast, still bleibt.
+• Optionaler Sync zwischen Handys über dein eigenes privates GitHub-Repository oder dein Google-Konto.
+• Helles und dunkles Design.
+• Auf English, Español, Français, Deutsch, हिन्दी, 简体中文 und 繁體中文.
+
+Strichfolge-Daten: KanjiVG von Ulrich Apel, CC BY-SA 3.0.

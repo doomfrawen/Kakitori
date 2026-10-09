@@ -1,4 +1,4 @@
-package app.renshu;
+package app.kakitori;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,24 +6,34 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.Insets;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowInsets;
+import android.view.WindowInsetsController;
 import android.webkit.JavascriptInterface;
 import android.webkit.ValueCallback;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.LinearLayout;
+import android.window.OnBackInvokedCallback;
+import android.window.OnBackInvokedDispatcher;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 
 public class MainActivity extends Activity {
     private static final int REQ_NOTIFY = 7;
     private WebView web;
+    private LinearLayout root;
+    private View topBar, bottomBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +42,14 @@ public class MainActivity extends Activity {
                 & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
 
         web = new WebView(this);
-        web.setBackgroundColor(night ? 0xFF10141B : 0xFFEDF0EE);
+        web.setBackgroundColor(night ? PAPER_DARK : PAPER_LIGHT);
         web.setOverScrollMode(View.OVER_SCROLL_NEVER);
         WebSettings s = web.getSettings();
         s.setJavaScriptEnabled(true);
         s.setDomStorageEnabled(true);
         s.setAllowFileAccess(false);
         s.setAllowContentAccess(false);
-        s.setUserAgentString(s.getUserAgentString() + " RenshuApp/1.7");
+        s.setUserAgentString(s.getUserAgentString() + " RenshuApp/1.8");
         web.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
@@ -56,10 +66,85 @@ public class MainActivity extends Activity {
             }
         });
         web.addJavascriptInterface(new Bridge(), "KakitoriNative");
-        setContentView(web);
+        setContentView(buildLayout());
+        applyBars(night);
+        listenForBack();
         Reminders.schedule(this); // re-arm in case the system cleared it
         web.loadDataWithBaseURL("https://appassets.androidplatform.net/renshu/",
                 readAsset("index.html"), "text/html", "utf-8", null);
+    }
+
+    private static final int PAPER_LIGHT = 0xFFEDF0EE, SURFACE_LIGHT = 0xFFFAFBFA;
+    private static final int PAPER_DARK = 0xFF10141B, SURFACE_DARK = 0xFF181E28;
+
+    /**
+     * The page fills the screen between two strips that sit under the status bar and the navigation bar.
+     * From Android 15 apps always draw behind the system bars, so the strips take the bars' sizes
+     * (and the keyboard's, when it is open) and carry the page's colors.
+     */
+    private View buildLayout() {
+        root = new LinearLayout(this);
+        root.setOrientation(LinearLayout.VERTICAL);
+        topBar = new View(this);
+        bottomBar = new View(this);
+        root.addView(topBar, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0));
+        root.addView(web, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f));
+        root.addView(bottomBar, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0));
+        if (Build.VERSION.SDK_INT >= 30) {
+            Window w = getWindow();
+            w.setDecorFitsSystemWindows(false);
+            w.setStatusBarColor(Color.TRANSPARENT);
+            w.setNavigationBarColor(Color.TRANSPARENT);
+            w.setNavigationBarContrastEnforced(false);
+            w.setStatusBarContrastEnforced(false);
+            root.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
+                @Override
+                public WindowInsets onApplyWindowInsets(View v, WindowInsets in) {
+                    Insets bars = in.getInsets(WindowInsets.Type.systemBars() | WindowInsets.Type.displayCutout());
+                    Insets ime = in.getInsets(WindowInsets.Type.ime());
+                    v.setPadding(bars.left, 0, bars.right, 0);
+                    setHeight(topBar, bars.top);
+                    setHeight(bottomBar, Math.max(bars.bottom, ime.bottom));
+                    return WindowInsets.CONSUMED;
+                }
+            });
+        }
+        return root;
+    }
+
+    private static void setHeight(View v, int h) {
+        ViewGroup.LayoutParams lp = v.getLayoutParams();
+        if (lp.height != h) {
+            lp.height = h;
+            v.setLayoutParams(lp);
+        }
+    }
+
+    /** Back first asks the page to close a panel or return to the Kana tab; otherwise the app goes to the background. */
+    private void listenForBack() {
+        if (Build.VERSION.SDK_INT >= 33) {
+            getOnBackInvokedDispatcher().registerOnBackInvokedCallback(OnBackInvokedDispatcher.PRIORITY_DEFAULT,
+                    new OnBackInvokedCallback() {
+                        @Override
+                        public void onBackInvoked() {
+                            handleBack();
+                        }
+                    });
+        }
+    }
+
+    private void handleBack() {
+        if (web == null) {
+            moveTaskToBack(true);
+            return;
+        }
+        web.evaluateJavascript("(window.renshuBack && window.renshuBack()) ? '1' : '0'",
+                new ValueCallback<String>() {
+                    @Override
+                    public void onReceiveValue(String value) {
+                        if (!"\"1\"".equals(value)) moveTaskToBack(true);
+                    }
+                });
     }
 
     /** Calls the page makes into the app: theme bars and the daily reminder. */
@@ -155,16 +240,27 @@ public class MainActivity extends Activity {
     }
 
     private void applyBars(boolean dark) {
-        int paper = dark ? 0xFF10141B : 0xFFEDF0EE;
-        int surface = dark ? 0xFF181E28 : 0xFFFAFBFA;
+        int paper = dark ? PAPER_DARK : PAPER_LIGHT;
+        int surface = dark ? SURFACE_DARK : SURFACE_LIGHT;
         Window w = getWindow();
-        w.setStatusBarColor(paper);
-        w.setNavigationBarColor(surface);
-        View d = w.getDecorView();
-        int lightFlags = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
-        int flags = d.getSystemUiVisibility();
-        d.setSystemUiVisibility(dark ? (flags & ~lightFlags) : (flags | lightFlags));
+        if (root != null) {
+            root.setBackgroundColor(paper);
+            topBar.setBackgroundColor(paper);
+            bottomBar.setBackgroundColor(surface);
+        }
         if (web != null) web.setBackgroundColor(paper);
+        if (Build.VERSION.SDK_INT >= 30) {
+            WindowInsetsController c = w.getInsetsController();
+            int light = WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS | WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS;
+            if (c != null) c.setSystemBarsAppearance(dark ? 0 : light, light);
+        } else {
+            w.setStatusBarColor(paper);
+            w.setNavigationBarColor(surface);
+            View d = w.getDecorView();
+            int lightFlags = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+            int flags = d.getSystemUiVisibility();
+            d.setSystemUiVisibility(dark ? (flags & ~lightFlags) : (flags | lightFlags));
+        }
     }
 
     @Override
@@ -179,20 +275,10 @@ public class MainActivity extends Activity {
         }
     }
 
+    /** Android 12 and older. Newer versions use the callback registered in listenForBack(). */
     @Override
     public void onBackPressed() {
-        if (web == null) {
-            finish();
-            return;
-        }
-        // Let the page close an open panel or step back to the Kana tab first.
-        web.evaluateJavascript("(window.renshuBack && window.renshuBack()) ? '1' : '0'",
-                new ValueCallback<String>() {
-                    @Override
-                    public void onReceiveValue(String value) {
-                        if (!"\"1\"".equals(value)) finish();
-                    }
-                });
+        handleBack();
     }
 
     @Override

@@ -1,0 +1,31 @@
+Kakitori (書き取り) significa escribir de memoria: la forma clásica en que los estudiantes japoneses aprenden a leer y escribir. Kakitori la convierte en unos minutos de práctica al día en tu móvil.
+
+ESCRIBE CADA KANA A MANO
+• Ves un sonido, dibujas su hiragana o katakana con el dedo y recibes al momento comentarios sobre el orden de los trazos.
+• Los números rojos muestran el orden y la dirección correctos. Los kana nuevos enseñan primero sus trazos, y Calcar añade una guía cuando la necesites.
+• Cada kana tiene una pista visual con una palabra en español para recordarlo.
+
+LEE CON TARJETAS Y TESTS
+• Las tarjetas y los tests entrenan la lectura en los dos sentidos: de kana a sonido y de sonido a kana.
+• Califícate tras cada tarjeta. Los kana que fallas vuelven en minutos y los que ya sabes, días después.
+• Elige exactamente qué filas practicar, incluidos los sonidos con ゛ y ゜.
+
+VERBOS, DE CINCO EN CINCO
+• 85 verbos cotidianos, desde 食べる (comer) hasta 結婚する (casarse).
+• Practica una forma cada vez: cortés y llana, presente y pasado, negativa, forma -te, «vamos a…» y «querer…».
+• La siguiente forma se desbloquea cuando aciertas 10 de tus últimas 12 respuestas, y cada respuesta viene con una regla breve que la explica.
+• Consulta cualquier verbo para ver todas sus formas juntas.
+
+SIGUE TU PROGRESO
+• Cada kana se colorea según lo bien que lo conoces, para leer y para escribir.
+• Toca un kana para repetir su orden de trazos y ver tus estadísticas.
+
+PRIVADA Y SENCILLA
+• Sin anuncios, sin cuentas y sin rastreo.
+• Funciona sin conexión.
+• Un recordatorio diario que no te molesta los días que ya has practicado.
+• Sincronización opcional entre móviles con tu propio repositorio privado de GitHub o tu cuenta de Google.
+• Tema claro y oscuro.
+• En English, Español, Français, Deutsch, हिन्दी, 简体中文 y 繁體中文.
+
+Datos de orden de trazos: KanjiVG, de Ulrich Apel, CC BY-SA 3.0.

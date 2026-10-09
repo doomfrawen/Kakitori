@@ -1,0 +1,31 @@
+Kakitori (書き取り) veut dire « écrire de mémoire » : la méthode classique des élèves japonais pour apprendre à lire et à écrire. Kakitori en fait quelques minutes d'entraînement par jour sur ton téléphone.
+
+ÉCRIS CHAQUE KANA À LA MAIN
+• Un son s'affiche : dessine son hiragana ou son katakana avec le doigt et vois tout de suite si l'ordre des traits est bon.
+• Les numéros rouges montrent le bon ordre et le bon sens. Les nouveaux kana montrent d'abord leurs traits, et Calquer ajoute un guide quand tu en as besoin.
+• Chaque kana a son aide-mémoire en image, avec un mot français.
+
+LIS AVEC LES CARTES ET LES QUIZ
+• Les cartes et les quiz entraînent la lecture dans les deux sens : du kana au son, et du son au kana.
+• Note-toi après chaque carte. Les kana ratés reviennent en quelques minutes, ceux que tu connais quelques jours plus tard.
+• Choisis exactement les lignes à pratiquer, y compris les sons avec ゛ et ゜.
+
+LES VERBES, CINQ PAR CINQ
+• 85 verbes courants, de 食べる (manger) à 結婚する (se marier).
+• Entraîne-toi une forme à la fois : poli et neutre, présent et passé, négatif, forme en -te, « faisons » et « vouloir ».
+• La forme suivante se débloque quand tu as 10 bonnes réponses sur tes 12 dernières, et chaque réponse est accompagnée d'une règle courte qui l'explique.
+• Consulte n'importe quel verbe pour voir toutes ses formes côte à côte.
+
+SUIS TES PROGRÈS
+• Chaque kana prend une couleur selon ton niveau, en lecture comme en écriture.
+• Touche un kana pour revoir l'ordre de ses traits et tes statistiques.
+
+SIMPLE ET RESPECTUEUX DE TA VIE PRIVÉE
+• Pas de pub, pas de compte, pas de pistage.
+• Fonctionne hors ligne.
+• Un rappel quotidien qui se tait les jours où tu as déjà pratiqué.
+• Synchronisation facultative entre téléphones via ton propre dépôt GitHub privé ou ton compte Google.
+• Thème clair et sombre.
+• En English, Español, Français, Deutsch, हिन्दी, 简体中文 et 繁體中文.
+
+Données d'ordre des traits : KanjiVG par Ulrich Apel, CC BY-SA 3.0.

@@ -1,0 +1,31 @@
+Kakitori (書き取り) means writing from memory: the classic way Japanese students learn to read and write. Kakitori turns it into a few minutes of practice a day on your phone.
+
+WRITE EACH KANA BY HAND
+• See a sound, draw its hiragana or katakana with your finger, and get stroke-order feedback right away.
+• Red numbers show the right order and direction. New kana play their strokes first, and Trace adds a guide whenever you need one.
+• A picture hint for every kana helps it stick.
+
+READ WITH CARDS AND QUIZZES
+• Flashcards and quizzes train reading both ways: kana to sound, and sound to kana.
+• Grade yourself after each card. Kana you miss come back within minutes, and kana you know come back days later.
+• Choose exactly which rows to practice, including the ゛ and ゜ sounds.
+
+LEARN VERBS FIVE AT A TIME
+• 85 everyday verbs, from 食べる (to eat) to 結婚する (to get married).
+• Practice one form at a time: polite and plain, present and past, negative, te-form, "let's" and "want to".
+• The next form unlocks when you get 10 of your last 12 right, and every answer comes with a short rule that explains it.
+• Look up any verb to see every form side by side.
+
+WATCH YOUR PROGRESS
+• Every kana is colored by how well you know it, for reading and for writing.
+• Tap a kana to replay its stroke order and see your stats.
+
+PRIVATE AND SIMPLE
+• No ads, no accounts, no tracking.
+• Works offline.
+• A daily reminder that stays quiet on days you've already practiced.
+• Optional sync between phones through your own private GitHub repository or Google account.
+• Light and dark themes.
+• In English, Español, Français, Deutsch, हिन्दी, 简体中文 and 繁體中文.
+
+Stroke order data: KanjiVG by Ulrich Apel, CC BY-SA 3.0.
