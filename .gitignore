@@ -1,0 +1,9 @@
+android/assets/
+android/build/
+*.apk
+*.p12
+*.jks
+*.keystore
+keystore-password.txt
+.DS_Store
+__pycache__/
